@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, ActivityIndicator, Image} from 'react-native';
+import { Image, Text, View } from 'react-native';
 
 export const Loader = ({
   message,

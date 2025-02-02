@@ -9,7 +9,7 @@ A customizable UI library for React Native that includes a dynamic status bar, l
 
 - **Status Bar Handling** (Dynamic content & color support)
 - **Loader Component** (Custom or default loading UI)
-- **Shimmer Placeholder** (Customizable shimmer effect using `react-native-shimmer-placeholder`)
+- **Shimmer Placeholder** 
 - **Empty View Handler** (Default & custom empty views when data is unavailable)
 - **Bottom Sheet Component** (Default & custom bottom sheets using `@gorhom/bottom-sheet`)
 - **Dynamic View & ScrollView Wrapper**
@@ -35,7 +35,7 @@ yarn add react-native-flexible-screencontainer
 Also, install peer dependencies manually if not already installed:
 
 ```sh
-yarn add @gorhom/bottom-sheet react-native-gesture-handler react-native-reanimated react-native-linear-gradient react-native-shimmer-placeholder react-native-super-grid react-native-vector-icons
+yarn add @gorhom/bottom-sheet react-native-linear-gradient react-native-super-grid react-native-safearea-height
 ```
 
 ---
@@ -132,11 +132,9 @@ const customBottomSheet = () => (
 This library uses:
 
 - `@gorhom/bottom-sheet` (For bottom sheet handling)
-- `react-native-gesture-handler` (For gesture interactions)
-- `react-native-reanimated` (For smooth animations)
 - `react-native-linear-gradient` (For shimmer effects)
-- `react-native-shimmer-placeholder` (For skeleton loading UI)
-- `react-native-vector-icons` (For icon handling)
+- `react-native-super-grid` (For grid layout)
+- `react-native-safearea-height` (For safe area handling)
 
 ⚠ **Note:** We do not claim ownership of any third-party dependencies used in this library. All credit goes to their respective owners. Please refer to their documentation for licensing information.
 

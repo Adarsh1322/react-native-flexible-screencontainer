@@ -2,7 +2,6 @@ import React, { memo, useCallback, useRef } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import BottomSheet, { BottomSheetView } from "@gorhom/bottom-sheet";
 import CustomPressableComponent from '../utils/custompressable';
-import VectorIcon from '../utils/vectorIcons';
 import { colors } from "../utils/colors";
 import { Images } from "../utils/images";
 

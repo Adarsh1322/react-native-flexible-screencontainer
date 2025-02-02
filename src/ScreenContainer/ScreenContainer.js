@@ -1,19 +1,18 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import {
-  View,
-  StatusBar,
-  ScrollView,
-  Platform,
-  Alert,
-  Text,
   ActivityIndicator,
+  Alert,
+  Platform,
+  ScrollView,
+  StatusBar,
+  View
 } from 'react-native';
-import {getStatusBarHeight} from 'react-native-safearea-height';
-import {Loader} from '../Loader/LoaderComponent';
-import ShimmerComponent from '../Shimmer/ShimmerComponent';
-import EmptyViewComponent from '../EmptyView/EmptyViewComponent';
+import { getStatusBarHeight } from 'react-native-safearea-height';
 import BottomSheetComponent from '../BottomSheet/BottomSheetComponent';
-import {Images} from '../utils/images';
+import EmptyViewComponent from '../EmptyView/EmptyViewComponent';
+import { Loader } from '../Loader/LoaderComponent';
+import ShimmerComponent from '../Shimmer/ShimmerComponent';
+import { Images } from '../utils/images';
 
 const STATUSBAR_HEIGHT =
   Platform.OS === 'ios' ? getStatusBarHeight(true) : StatusBar.currentHeight;
