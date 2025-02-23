@@ -5,7 +5,6 @@ import { colors } from '../utils/colors';
 import { Images } from "../utils/images";
 
 export default function EmptyViewComponent(props) {
-  console.log("props", props)
   const { emptyViewMessage, buttonText, onEmptyButtonPress, emptyRendeView } = props;
   return emptyRendeView === 'default' ? (
     <View

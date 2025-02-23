@@ -1,10 +1,10 @@
 {
   "name": "react-native-flexible-screencontainer",
-  "version": "1.0.2",
-  "description": "A customizable UI library for React Native that includes a dynamic status bar, loaders, shimmer effects, scrollable and non-scrollable views, an empty state handler, and a bottom sheet implementation.",
+  "version": "1.0.3",
+  "description": "A lightweight and customizable UI library for React Native that includes a dynamic status bar, loaders, shimmer effects, scrollable and non-scrollable views, an empty state handler, and a bottom sheet implementation.",
   "main": "index.js",
   "scripts": {
-    "test": "npm install react-native-flexible-screencontainer"
+    "test": "node -e \"try { require('./index.js'); console.log('Test passed: Module is importable'); } catch (e) { console.error('Test failed:', e); process.exit(1); }\""
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,7 @@
     "shimmer",
     "status-bar",
     "bottomsheet",
-    "npm"
+    "lightweight"
   ],
   "author": "adarsh_pandey_238",
   "license": "ISC",
@@ -26,15 +26,25 @@
     "url": "https://github.com/Adarsh1322/react-native-flexible-screencontainer/issues"
   },
   "homepage": "https://github.com/Adarsh1322/react-native-flexible-screencontainer#readme",
-  "dependencies": {
+  "peerDependencies": {
+    "react": ">=17.0.0 || >=18.0.0",
+    "react-native": ">=0.68.0",
+    "react-native-reanimated": ">=2.14.4",
     "@gorhom/bottom-sheet": "^5.0.6",
     "react-native-linear-gradient": "^2.8.3",
-    "react-native-safearea-height": "^1.0.7",
-    "react-native-super-grid": "^6.0.1"
+    "react-native-safearea-height": "^1.0.7"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": false
+    },
+    "react-native": {
+      "optional": false
+    }
   },
   "devDependencies": {
-    "@babel/cli": "^7.26.4",
-    "@babel/preset-env": "^7.26.7",
-    "@babel/preset-react": "^7.26.3"
+    "@gorhom/bottom-sheet": "^5.0.6",
+    "react-native-linear-gradient": "^2.8.3",
+    "react-native-safearea-height": "^1.0.7"
   }
 }

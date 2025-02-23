@@ -3,9 +3,8 @@ import { View, StyleSheet, Animated, Platform } from "react-native";
 import LinearGradient from "react-native-linear-gradient";
 import PropTypes from "prop-types";
 
-const CustomLinearGradient = React.forwardRef(({ locationStart, colorShimmer, widthShimmer }, ref) => (
+const CustomLinearGradient = ({ locationStart, colorShimmer, widthShimmer }) => (
   <LinearGradient
-    ref={ref}
     colors={colorShimmer}
     style={{ flex: 1 }}
     start={{ x: -1, y: 0.5 }}
@@ -16,10 +15,10 @@ const CustomLinearGradient = React.forwardRef(({ locationStart, colorShimmer, wi
       locationStart + 1,
     ]}
   />
-));
+);
 
 CustomLinearGradient.propTypes = {
-  locationStart: PropTypes.any,
+  locationStart: PropTypes.number.isRequired,
   colorShimmer: PropTypes.array.isRequired,
   widthShimmer: PropTypes.number.isRequired,
 };
@@ -43,23 +42,30 @@ const Shimmer = ({
   const beginShimmerPosition = useRef(new Animated.Value(-1)).current;
 
   useEffect(() => {
+    let isMounted = true;
+
+    const loopAnimated = () => {
+      if (!isMounted) return;
+      beginShimmerPosition.setValue(-1);
+      Animated.timing(beginShimmerPosition, {
+        toValue: 1,
+        duration,
+        useNativeDriver: false,
+      }).start(() => {
+        if (!visible && isMounted) {
+          loopAnimated();
+        }
+      });
+    };
+
     if (autoRun) {
       loopAnimated();
     }
-  }, [autoRun]);
 
-  const loopAnimated = () => {
-    beginShimmerPosition.setValue(-1);
-    Animated.timing(beginShimmerPosition, {
-      toValue: 1,
-      duration,
-      useNativeDriver: false,
-    }).start(() => {
-      if (!visible) {
-        loopAnimated();
-      }
-    });
-  };
+    return () => {
+      isMounted = false; // Prevents memory leaks
+    };
+  }, [autoRun, visible, duration]);
 
   const beginPosition = reverse ? 0.7 : -0.7;
   const endPosition = reverse ? -0.7 : 0.7;
