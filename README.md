@@ -9,35 +9,48 @@ A customizable UI library for React Native that includes a dynamic status bar, l
 
 - **Status Bar Handling** (Dynamic content & color support)
 - **Loader Component** (Custom or default loading UI)
-- **Shimmer Placeholder**
+- **Shimmer Placeholder** 
 - **Empty View Handler** (Default & custom empty views when data is unavailable)
 - **Bottom Sheet Component** (Default & custom bottom sheets using `@gorhom/bottom-sheet`)
 - **Dynamic View & ScrollView Wrapper**
 
 This library helps in creating highly customizable and reusable UI components while maintaining optimal performance.
 
+---
+
 ## 🛠 **Installation**
 
 Ensure you have React Native set up. Then, install the package:
 
+```sh
 npm install react-native-flexible-screencontainer
+```
 
 or using Yarn:
 
+```sh
 yarn add react-native-flexible-screencontainer
+```
 
 Also, install peer dependencies manually if not already installed:
-yarn add @gorhom/bottom-sheet react-native-linear-gradient react-native-safearea-height
 
+```sh
+yarn add @gorhom/bottom-sheet react-native-linear-gradient react-native-safearea-height
+```
+
+---
 
 ## 🚀 **Usage**
 
 ### 1️⃣ **Importing ScreenContainer**
 
+```javascript
 import ScreenContainer from 'react-native-flexible-screencontainer';
+```
 
 ### 2️⃣ **Basic Usage**
 
+```javascript
 import React from 'react';
 import { View, Text } from 'react-native';
 import ScreenContainer from 'react-native-flexible-screencontainer';
@@ -51,23 +64,29 @@ const App = () => {
 };
 
 export default App;
-
+```
 
 ### 3️⃣ **Showing Loader**
 
+```javascript
 <ScreenContainer showLoader={true} message="Loading..." />
+```
 
 ### 4️⃣ **Using Shimmer Effect**
 
+```javascript
 <ScreenContainer showShimmer={true} shimmerType="default" />
+```
 
 ### 5️⃣ **Handling Empty View**
 
+```javascript
 <ScreenContainer emptyView={true} emptyRendeView="default" emptyMessage="No Data Found" />
-
+```
 
 ### 6️⃣ **Custom Empty View**
 
+```javascript
 const customEmptyView = () => (
   <View>
     <Text style={{ fontSize: 20, color: 'red' }}>No Records Available</Text>
@@ -75,14 +94,17 @@ const customEmptyView = () => (
 );
 
 <ScreenContainer emptyView={true} emptyRendeView="custom" renderCustomEmptyView={customEmptyView} />
+```
 
 ### 7️⃣ **Showing Bottom Sheet**
 
+```javascript
 <ScreenContainer showSheet={true} data={{ msg: "Hello!", description: "This is a bottom sheet." }} />
+```
 
 ### 8️⃣ **Custom Bottom Sheet**
 
-
+```javascript
 const customBottomSheet = () => (
   <View style={{ padding: 20, backgroundColor: 'black' }}>
     <Text style={{ color: 'white' }}>Custom Bottom Sheet</Text>
@@ -90,6 +112,9 @@ const customBottomSheet = () => (
 );
 
 <ScreenContainer showSheet={true} renderCustomBottomSheet={customBottomSheet} />
+```
+
+---
 
 ## 📌 **Features**
 
@@ -99,6 +124,8 @@ const customBottomSheet = () => (
 - ✅ **Empty View Handler**
 - ✅ **Default & Custom Bottom Sheets**
 - ✅ **Seamless Integration with View & ScrollView**
+
+---
 
 ## 📖 **Dependencies**
 
@@ -110,9 +137,13 @@ This library uses:
 
 ⚠ **Note:** We do not claim ownership of any third-party dependencies used in this library. All credit goes to their respective owners. Please refer to their documentation for licensing information.
 
+---
+
 ## 🛠 **Contributing**
 
 We welcome contributions! If you find a bug or want to improve features, feel free to open a Pull Request.
+
+---
 
 ## 📄 **License**
 
@@ -120,13 +151,17 @@ We welcome contributions! If you find a bug or want to improve features, feel fr
 
 🚀 **Created for React Native Developers to enhance UI experience effortlessly!**
 
+---
+
 ## 🧐 **Common Issues & Solutions**
 
 ### 🔍 **(NOBRIDGE) ERROR - GestureHandlerRootView Required**
 
 If you encounter the following error while using this library:
 
+```plaintext
 Warning: Error: GestureDetector must be used as a descendant of GestureHandlerRootView. Otherwise, the gestures will not be recognized.
+```
 
 ### 🔮 **Why is it necessary to add GestureHandlerRootView now?**
 
@@ -138,11 +173,15 @@ Previously, this was implicitly handled within React Native, but now any compone
 
 If you don’t want to wrap `GestureHandlerRootView` everywhere, you can downgrade `react-native-gesture-handler` to an older version:
 
+```sh
 yarn add react-native-gesture-handler@2.12.0
+```
 
 Then, clear the cache and restart your project:
 
+```sh
 yarn start --reset-cache
+```
 
 🚫 **However, downgrading is not recommended**, as newer versions offer better performance and stability.
 
@@ -152,6 +191,7 @@ To avoid manually wrapping `GestureHandlerRootView` in multiple places, wrap you
 
 #### 📌 **index.js (Best Solution)**
 
+```javascript
 import 'react-native-gesture-handler';
 import { AppRegistry } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
@@ -166,10 +206,11 @@ const RootComponent = () => (
 );
 
 AppRegistry.registerComponent(appName, () => RootComponent);
-
+```
 
 ✅ **This will automatically apply `GestureHandlerRootView` globally, so you won't need to wrap it in `App.js` or other components manually.**
 
+---
 
 ## 💖 Support & Sponsorship
 If you like this library and want to support its development, consider sponsoring me on [GitHub Sponsors](https://github.com/sponsors/Adarsh1322) 
