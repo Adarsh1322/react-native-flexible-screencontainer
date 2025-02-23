@@ -1,6 +1,6 @@
 {
   "name": "react-native-flexible-screencontainer",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A lightweight and customizable UI library for React Native that includes a dynamic status bar, loaders, shimmer effects, scrollable and non-scrollable views, an empty state handler, and a bottom sheet implementation.",
   "main": "index.js",
   "scripts": {
